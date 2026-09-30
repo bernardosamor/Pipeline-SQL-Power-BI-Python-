@@ -72,6 +72,18 @@ Para otimizar a experiência do usuário final e facilitar explorações, foi de
 
 ---
 
+## 📸 Prints do Projeto.
+
+* ** Overview Macro:**
+
+<img width="6600" height="3714" alt="Template Overview Novo" src="https://github.com/user-attachments/assets/0459031b-64de-4448-83e7-65dfe92b848b" />
+
+* ** Overview Bairro:**
+
+<img width="1304" height="722" alt="Overview Bairro PBH" src="https://github.com/user-attachments/assets/0cbda082-1769-42bd-9c29-bb5cddfb0766" />
+
+---
+
 ## 🚀 Como Executar o Projeto
 
 1. **SQL / Banco de Dados:**
