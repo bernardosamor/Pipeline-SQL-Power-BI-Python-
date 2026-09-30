@@ -76,7 +76,8 @@ Para otimizar a experiência do usuário final e facilitar explorações, foi de
 
 * ** Overview Macro:**
 
-<img width="6600" height="3714" alt="Template Overview Novo" src="https://github.com/user-attachments/assets/0459031b-64de-4448-83e7-65dfe92b848b" />
+<img width="1301" height="728" alt="Overview Macro PBH" src="https://github.com/user-attachments/assets/f67ee734-0c28-455c-898d-921fbeca88fa" />
+
 
 * ** Overview Bairro:**
 
