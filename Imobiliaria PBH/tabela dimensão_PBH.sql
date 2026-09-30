@@ -1,0 +1,2 @@
+SELECT *
+FROM imobiliario_db.populacao_domicilio_bairro_2022;
