@@ -20,10 +20,7 @@ A solução combina um **pipeline rigoroso de limpeza e harmonização em SQL**,
 
 ## 🎯 Problema de Negócio & Objetivos
 
-1. **Avaliador de Atratividade:** Identificar bairros com **menor tempo de payback** e maior densidade/oferta para apoiar decisões de expansão e novos empreendimentos.
-2. **Harmonização de Bases Heterogêneas:** Cruzar dados demográficos e geográficos oficiais com listagens de mercado, superando discrepâncias de nomenclatura de bairros e acentuação/encoding.
-3. **Acessibilidade dos Dados via IA:** Permitir que gestores e analistas consultem a base em SQL sem a necessidade de escrever queries complexas manualmente.
-
+Mediante a densidade de imóveis e gama de opções de locais aos quais podem ser atribuídos a escolha de se construir um complexos imobiliário na cidade de Belo Horizonte, criei uma ferramenta para ter acesso a base de dados públicos da prefeitura de Belo Horizonte para se entender o apelo que se tem de cada perfil de imóvel, desde custo, tamanho, localidade e ligando isso a demanda que cada aspecto tem pelo público.
 ---
 ---
 
@@ -33,7 +30,7 @@ A etapa de tratamento em SQL resolveu desafios críticos de consistência de dad
 
 * **Resolução de Problemas de Encoding:** Trata discrepâncias de codificação (e.g., `UTF-8` vs `ISO-8859-1`/`LATIN-1`) no import e cruzamento de tabelas, eliminando caracteres corrompidos (*mojibake*) nos nomes dos bairros.
 * **Padronização e Normalização de Bairros:** Aplicação de funções de substituição de acentos e caracteres especiais (`TRANSLATE`, `LOWER`, remoção de pontuação) para criar uma chave única de associação entre a base do Kaggle e a base oficial da PBH.
-* **Eliminação de Ambiguidades e Poluição:** Criação de *views* sanitizadas para garantir que dados sem preenchimento ou irrelevantes para a decisão imobiliária sejam devidamente categorizados ou filtrados no nível analítico.
+* **Eliminação de Ambiguidades e Poluição:** Criação de *views* tratadas, onde houve exclusão de dados nulos, alinhamento de valores decimais para garantir que dados sem preenchimento ou irrelevantes para a decisão imobiliária sejam devidamente categorizados ou filtrados no nível analítico.
 
 ---
 
