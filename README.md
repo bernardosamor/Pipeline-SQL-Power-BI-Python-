@@ -78,6 +78,7 @@ Para otimizar a experiência do usuário final e facilitar explorações, foi de
 
 <img width="1301" height="728" alt="Overview Macro PBH" src="https://github.com/user-attachments/assets/f67ee734-0c28-455c-898d-921fbeca88fa" />
 
+---
 
 * ** Overview Bairro:**
 
