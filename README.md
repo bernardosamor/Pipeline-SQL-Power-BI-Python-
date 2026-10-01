@@ -21,7 +21,7 @@ A solução combina um **pipeline rigoroso de limpeza e harmonização em SQL**,
 ## 🎯 Problema de Negócio & Objetivos
 
 Mediante a densidade de imóveis e gama de opções de locais aos quais podem ser atribuídos a escolha de se construir um complexos imobiliário na cidade de Belo Horizonte, criei uma ferramenta para ter acesso a base de dados públicos da prefeitura de Belo Horizonte para se entender o apelo que se tem de cada perfil de imóvel, desde custo, tamanho, localidade e ligando isso a demanda que cada aspecto tem pelo público.
----
+
 ---
 
 ## 🗄️ Tratamento de Dados & Engenharia em SQL
