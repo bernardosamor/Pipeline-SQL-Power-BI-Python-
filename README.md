@@ -114,6 +114,12 @@ Para otimizar a experiência do usuário final e facilitar explorações, foi de
 
 ---
 
+* ** Power BI: Segregação das tabelas e Medidas:**
+
+<img width="320" height="373" alt="Segregação de tabelas e apresentação de medidas utilizadas" src="https://github.com/user-attachments/assets/e3bcadc6-5a41-4713-94dc-da326c8094f1" />
+
+---
+
 * ** Dashboard Power BI: Overview Macro:**
 
 <img width="1301" height="728" alt="Overview Macro PBH" src="https://github.com/user-attachments/assets/f67ee734-0c28-455c-898d-921fbeca88fa" />
@@ -130,6 +136,7 @@ Para otimizar a experiência do usuário final e facilitar explorações, foi de
 
 <img width="1486" height="658" alt="print agente de ia streamlit" src="https://github.com/user-attachments/assets/6c9f8f28-4360-4d3f-86db-bf0917138d62" />
 
+---
 
 ## 🚀 Como Executar o Projeto
 
