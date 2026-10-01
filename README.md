@@ -74,17 +74,22 @@ Para otimizar a experiência do usuário final e facilitar explorações, foi de
 
 ## 📸 Prints do Projeto.
 
-* ** Overview Macro:**
+* ** Dashboard Power BI: Overview Macro:**
 
 <img width="1301" height="728" alt="Overview Macro PBH" src="https://github.com/user-attachments/assets/f67ee734-0c28-455c-898d-921fbeca88fa" />
 
 ---
 
-* ** Overview Bairro:**
+* ** Dashboard Power BI: Overview Bairro:**
 
 <img width="1304" height="722" alt="Overview Bairro PBH" src="https://github.com/user-attachments/assets/0cbda082-1769-42bd-9c29-bb5cddfb0766" />
 
 ---
+
+* ** Python: Agente Imobiliário com UI Streamlit:**
+
+<img width="1486" height="658" alt="print agente de ia streamlit" src="https://github.com/user-attachments/assets/6c9f8f28-4360-4d3f-86db-bf0917138d62" />
+
 
 ## 🚀 Como Executar o Projeto
 
