@@ -45,6 +45,28 @@ O modelo de dados adota a arquitetura de **Star Schema** (Esquema Estrela), gara
 
 ---
 
+## 🏗️ Engenharia & Modelagem de Dados (Data Architecture)
+
+Para garantir performance, escalabilidade e manutenibilidade do projeto, o modelo de dados passou por um processo completo de **refatoração arquitetural**, evoluindo de esquemas legados com ambiguidades para um **Star Schema (Esquema em Estrela)** otimizado.
+
+### 🎯 Principais Desafios & Soluções Arquiteturais
+
+1. **Migração para Star Schema ($1 : N$):**
+   * **Desafio:** Existência de tabelas relacionais intermediárias e granularidades inconsistentes que geravam ambiguidades nos relacionamentos e duplicidades de registros.
+   * **Solução:** Consolidação das dimensões geodemográficas na dimensão mestre `dBairro` (Lado $1$) conectada diretamente à tabela de anúncios `fato_Kaggle` (Lado $N$).
+
+2. **Garantia de Granularidade e Deduplicação:**
+   * **Ajuste Fino:** Remoção de atributos de oferta (`tipo_imovel` e `tipo_negocio`) da dimensão geográfica para garantir a estrita relação $1:N$ sem quebra de cardinalidade por bairros homônimos/duplicados.
+
+3. **Padronização e Tratamento em Pipeline (Power Query / SQL):**
+   * Padronização de nomes de bairros utilizando *Capitalize Each Word* para alinhamento entre as bases do IBGE/PBH e dados extraídos via Web Scraping/Kaggle.
+
+4. **Centralização de Regras de Negócio e Otimização DAX:**
+   * Criação do repositório dedicado `_Medidas` para isolar toda a camada de cálculo.
+   * **Faxina & Refatoração:** Remoção de código morto, unificação de medidas redundantes de m² e uso de funções seguras (`DIVIDE` com tratamento de divisão por zero) para otimização do consumo de memória.
+
+---
+
 ## 🤖 Módulo Python: Text-to-SQL
 
 Para otimizar a experiência do usuário final e facilitar explorações, foi desenvolvido um agente em Python que converte perguntas em linguagem natural diretamente para instruções SQL:
