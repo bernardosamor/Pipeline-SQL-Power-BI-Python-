@@ -96,6 +96,24 @@ Para otimizar a experiência do usuário final e facilitar explorações, foi de
 
 ## 📸 Prints do Projeto.
 
+* ** SQL: Tratamento de Mojibakes:**
+
+<img width="913" height="466" alt="Tratamento de erros de encoding" src="https://github.com/user-attachments/assets/eb0fe15d-a8df-4e7a-9ae2-6d6e5bb7b090" />
+
+---
+
+* ** SQL: Tratamento de Mojibakes:**
+
+<img width="1036" height="444" alt="Normalização de nomes de bairro em cruzamento de tabelas (Kaggle x PBH)" src="https://github.com/user-attachments/assets/6e464a55-0877-439a-9ca4-589af89cbbf5" />
+
+---
+
+* ** Power BI: Apresentação dos relacionamentos (Star Schema):**
+
+<img width="1583" height="866" alt="Star Schema PBH" src="https://github.com/user-attachments/assets/243ef430-8820-480a-9841-fe5d5f49badd" />
+
+---
+
 * ** Dashboard Power BI: Overview Macro:**
 
 <img width="1301" height="728" alt="Overview Macro PBH" src="https://github.com/user-attachments/assets/f67ee734-0c28-455c-898d-921fbeca88fa" />
