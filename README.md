@@ -1,5 +1,5 @@
 # Pipeline-SQL-Power-BI-Python-
-Projeto criado para avaliar a construção de complexos imobiliários na cidade de Belo Horizonte, avaliando bairro a bairro para a escolha estratégica de custo e retorno financeiro rápido. Foram utilizados SQL para o tratamento bruto dos dados, Power BI para apresentação dos dados e Python para navegação inteligente pela base de dados (Text to SQL)
+Projeto criado para avaliar a construção de complexos imobiliários na cidade de Belo Horizonte, avaliando bairro a bairro para a escolha estratégica de custo e retorno financeiro rápido. Foram utilizados SQL para o tratamento bruto dos dados, Power BI para apresentação dos dados e Python para navegação inteligente pela base de dados (Text to SQL). Bairro escolhido foi o Funcionários com uma expectativa de R$ X de aporte financeiro, e calculando uma margem de 30%, R$ X de lucro.
 
 # 🏢 Análise de Atratividade Imobiliária & Inteligência de Mercado — Belo Horizonte (PBH & Kaggle)
 
@@ -12,7 +12,11 @@ Projeto criado para avaliar a construção de complexos imobiliários na cidade 
 
 ## 📌 Visão Geral do Projeto
 
-Este projeto tem como objetivo avaliar a **atratividade e viabilidade de investimentos imobiliários na cidade de Belo Horizonte/MG**, integrando dados públicos da Prefeitura de Belo Horizonte (PBH) com dados consolidados do mercado imobiliário (Kaggle). 
+Este projeto tem como objetivo avaliar a **atratividade e viabilidade de investimentos imobiliários na cidade de Belo Horizonte/MG**, integrando dados públicos da Prefeitura de Belo Horizonte (PBH) com dados consolidados do mercado imobiliário (Kaggle). Foram definidas algumas regras para a escolha de bairro adequado, a qual identifiquei o Funcionários como escolha ideal pelos motivos abaixo:
+* **Tempo de payback**: Bairro dentre os 5 com menores valores, mostrando baixo tempo de retorno no investimento.
+* **Localização Estratégica:** Região Centro-Sul, garante baixíssima vacância locatícia e rápida conexão com polos de serviços, saúde e educação.
+* **Aporte necessário:** Exige um ticket médio de R$ 10.000/m², cerca 1,65x maior que a mediana da cidade 
+* **Densidade populacional (demanda):** 249,68 habitantes a cada 10.000, mostrando ter demanda.
 
 A solução combina um **pipeline rigoroso de limpeza e harmonização em SQL**, um **dashboard executivo moderno no Power BI** (com suporte a matrizes de risco/retorno e análise de payback) e um **módulo interativo em Python utilizando Text-to-SQL**, que permite realizar consultas em linguagem natural no banco de dados imobiliário.
 
@@ -20,7 +24,7 @@ A solução combina um **pipeline rigoroso de limpeza e harmonização em SQL**,
 
 ## 🎯 Problema de Negócio & Objetivos
 
-Mediante a densidade de imóveis e gama de opções de locais aos quais podem ser atribuídos a escolha de se construir um complexos imobiliário na cidade de Belo Horizonte, criei uma ferramenta para ter acesso a base de dados públicos da prefeitura de Belo Horizonte para se entender o apelo que se tem de cada perfil de imóvel, desde custo, tamanho, localidade e ligando isso a demanda que cada aspecto tem pelo público.
+Mediante a densidade de imóveis e gama de opções de locais aos quais podem ser atribuídos a escolha de se construir um complexos imobiliário na cidade de Belo Horizonte, criei uma ferramenta para ter acesso a base de dados públicos da prefeitura de Belo Horizonte para se entender o apelo que se tem de cada perfil de imóvel, desde custo, tamanho, localidade e ligando isso a demanda que cada aspecto tem pelo público. Meu objetivo foi selecionar um bairro depois de filtrar a base com um range de R$ 1.0000 - 50.000 de custo mediano de M2, um tamanho de imóveis entre 20 - 360 m2.  
 
 ---
 
