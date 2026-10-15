@@ -101,6 +101,32 @@ O modelo de dados adota a arquitetura de **Star Schema** (Esquema Estrela), gara
 
 ---
 
+## 🤖 Módulo Python: Text-to-SQL 
+
+Para otimizar a experiência do usuário final e facilitar explorações, foi desenvolvido um agente em Python que converte perguntas em linguagem natural diretamente para instruções SQL.
+* **Confiabilidade da fonte:** Modelo utiliza o LLM Deepseek como fonte, sendo um código opensource e já testado no mercado, permitindo a integração.
+* **Interface Amigável:** Permite perguntas como *"Quais são os 5 bairros com menor preço por m²?"* ou *"Qual a oferta de imóveis de 3 quartos no Centro?"*.
+* **Geração Automática de Queries:** Mapeia a intenção da pergunta para o schema do banco de dados, retornando os resultados estruturados instantaneamente.
+* **Agilidade no Mapeamento:** Reduz a dependência da equipe de BI para responder a dúvidas operacionais pontuais do time de negócios, fazendo com que consultas sejam realizadas apenas com prompts.
+
+---
+## 📊 Estrutura do Dashboard (Power BI)
+
+* **Página 1 — Overview Macro:** 
+  * KPIs principais (`Total de Imóveis`, `Preço Mediano m²`, `Payback Mediano Cidade`, `#1 Bairro em Oferta`, `#1 Bairro em Oportunidades`).
+  * Matriz de Atratividade (*Preço do m² x Payback*).
+  * Oferta de Imóveis x Qtd. Quartos
+  * Ranking dos Top 5 Bairros com menor tempo de payback (Oportunidades) vs maior tempo (Riscos).
+* **Página 2 — Análise de Valor por Bairro:**
+  * Filtro lateral dinâmico por Bairro.
+  * KPIs principais (`Qtd. Imóveis x Oferta per 10k Habitantes`, `Área mediana dos imóveis  m²`, `Preço mediano m²`, `Tempo mediano de Payback`).
+  * Distribuição por tipologia de quartos (1, 2, 3 e 4+ quartos).
+  * Custo do m² por quantidade de quartos.
+  * Quantidade de imóveis por faixas de preço de m².
+  * Custo mediano do m2 por padrão de vaga de garagem.
+
+---
+
 ### 🎯 Principais Desafios
 
 1. **Padronização e Tratamento em Pipeline (Power Query / SQL):**
@@ -119,33 +145,6 @@ O modelo de dados adota a arquitetura de **Star Schema** (Esquema Estrela), gara
    * **Existência de tabelas relacionais intermediárias que geravam ambiguidades nos relacionamentos e duplicidades de registros.
    * **Remoção de atributos de oferta (`tipo_imovel` e `tipo_negocio`) da dimensão geográfica para garantir a estrita relação $1:N$ sem quebra de cardinalidade por bairros duplicados.
    * **Solução:** Consolidação das informação na tabela dimensão mestre `dBairro` (Lado $1$) conectada diretamente à tabela de anúncios `fato_Kaggle` (Lado $N$).
-
----
-
-## 🤖 Módulo Python: Text-to-SQL 
-
-Para otimizar a experiência do usuário final e facilitar explorações, foi desenvolvido um agente em Python que converte perguntas em linguagem natural diretamente para instruções SQL.
-* **Confiabilidade da fonte:** Modelo utiliza o LLM Deepseek como fonte, sendo um código opensource e já testado no mercado, permitindo a integração.
-* **Interface Amigável:** Permite perguntas como *"Quais são os 5 bairros com menor preço por m²?"* ou *"Qual a oferta de imóveis de 3 quartos no Centro?"*.
-* **Geração Automática de Queries:** Mapeia a intenção da pergunta para o schema do banco de dados, retornando os resultados estruturados instantaneamente.
-* **Agilidade no Mapeamento:** Reduz a dependência da equipe de BI para responder a dúvidas operacionais pontuais do time de negócios, fazendo com que consultas sejam realizadas apenas com prompts.
-
----
-
-## 📊 Estrutura do Dashboard (Power BI)
-
-* **Página 1 — Overview Macro:** 
-  * KPIs principais (`Total de Imóveis`, `Preço Mediano m²`, `Payback Mediano Cidade`, `#1 Bairro em Oferta`, `#1 Bairro em Oportunidades`).
-  * Matriz de Atratividade (*Preço do m² x Payback*).
-  * Oferta de Imóveis x Qtd. Quartos
-  * Ranking dos Top 5 Bairros com menor tempo de payback (Oportunidades) vs maior tempo (Riscos).
-* **Página 2 — Análise de Valor por Bairro:**
-  * Filtro lateral dinâmico por Bairro.
-  * KPIs principais (`Qtd. Imóveis x Oferta per 10k Habitantes`, `Área mediana dos imóveis  m²`, `Preço mediano m²`, `Tempo mediano de Payback`).
-  * Distribuição por tipologia de quartos (1, 2, 3 e 4+ quartos).
-  * Custo do m² por quantidade de quartos.
-  * Quantidade de imóveis por faixas de preço de m².
-  * Custo mediano do m2 por padrão de vaga de garagem.
 
 ---
 
