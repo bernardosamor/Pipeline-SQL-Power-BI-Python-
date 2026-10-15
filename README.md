@@ -54,18 +54,19 @@ Escolhi o bairro Belvedere como ideal. Após passarem pelas regras de negócio, 
 
 Aqui surge a pergunta: "Por que Belvedere e não Santo Agostinho se o driver de decisão foi o tempo de Payback?". Quando avaliei o comportamento dos 5 bairros perante as métricas definidas, algo fica destacado: 
 
-| Bairro          | Payback Mediano | Preço mediano m2 | Oferta per 10k Habitantes |
- ----------------------------------------------------------------------------------
-| Santo Agostinho |      7.49       |  R$ 12.592,59    |           160,27          |
-| Savassi         |      7.57       |  R$ 12.352,43    |           124,04          |
-| Lourdes         |      7,98       |  R$ 11.266.67    |           196,39          |
-| Belvedere       |      8,42       |  R$ 10.273.97    |           111,18          |
-| Funcionários    |      8,56       |  R$ 10.000,00    |           249,68          |
+| Bairro | Payback Mediano | Preço mediano m2 | Oferta per 10k Habitantes |
+| :--- | :---: | :---: | :---: |
+| Santo Agostinho | 7.49 | R$ 12.592,59 | 160,27 |
+| Savassi | 7.57 | R$ 12.352,43 | 124,04 |
+| Lourdes | 7.98 | R$ 11.266,67 | 196,39 |
+| Belvedere | 8.42 | R$ 10.273,97 | 111,18 |
+| Funcionários | 8,56 | R$ 10.000,00 | 249,68 |
+
 
 Aqui 3 bairros se destacam, Santo Agostinho pelo menor payback, Belvedere e Funcionários pelos menores preços de m2. 
 
 | Bairro          | Payback Mediano     | Preço mediano m2  | Oferta per 10k Habitantes |
- ---------------------------------------------------------------------------------------
+| :--- | :---: | :---: | :---: |
 | Santo Agostinho |      **7.49**       |  R$ 12.592,59     |           160,27          |
 | Belvedere       |      8,42           |  R$ 10.273.97     |           **111,18**      |
 | Funcionários    |      8,56           |  **R$ 10.000,00** |           249,68          |
