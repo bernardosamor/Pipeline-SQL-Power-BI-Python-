@@ -93,6 +93,11 @@ Para garantir performance, escalabilidade e manutenibilidade do projeto, o model
 
 ### 🎯 Conclusões alcançadas
 
+Utilizei o tempo de Payback como métrica de retorno financeiro, com isso, filtrei os 5 bairros com o menor Payback e os comparei entre si com os critérios:
+* **Localização estratégica:** Como o bairro se posiciona, proximidade com hospitais, escolas.
+* **Custo do m2 mediano e Oferta de imóveis per 10.000 habitantes:** Como os valores de Payback eram muitos próximos, utilizei os dois pontos como critério de desempate.
+
+Com isso, o bairro Funcionários se destaca. O bairro apresenta perfil residencial e o menor custo de m2 dentre os 5 bairros mais atrativos. Ponto a se observar é a maior oferta geral, o que pode significar maior também maior competitividade. 
 
 ---
 
