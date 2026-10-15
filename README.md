@@ -26,7 +26,7 @@ Meu objetivo foi selecionar um bairro. Para seleção ideal, precisei adaptar a 
 * **Amostra mínima:** Considerei apenas bairros com ao menos 20 anúncios e 10 endereços distintos.
 * **Definir critério para cálculo de Payback:** Consultando o Sinduscon-MG, optei por usar um CUB de R$ 3.137,48 para residências de alto nível (padrão R-8) e atualizado em Setembro de 2026. Definindo 20% do valor para o terreno e aluguel de 0,5%/mês. Este valor não considera a instalação de elevadores, ar-condicionado e outros custos adicionais. 
 
-## 🛠️ Resultados do tratamento
+## 🛠️ Tratamento da Base
 
 Aplicando os critérios, a base passou por uma redução no volume de anúncios:
 
