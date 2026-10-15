@@ -1,5 +1,5 @@
 # Pipeline-SQL-Power-BI-Python-
-Projeto criado para avaliar a construção de complexos imobiliários na cidade de Belo Horizonte, avaliando bairro a bairro para a escolha estratégica de custo e retorno financeiro rápido. Foram utilizados SQL para o tratamento bruto dos dados, Power BI para apresentação dos dados e Python para navegação inteligente pela base de dados (Text to SQL). Bairro escolhido foi o Funcionários com uma expectativa de R$ X de aporte financeiro, e calculando uma margem de 30%, R$ X de lucro.
+Projeto criado para avaliar a construção de complexos imobiliários na cidade de Belo Horizonte, avaliando bairro a bairro para a escolha estratégica de custo e retorno financeiro rápido. Foram utilizados SQL para o tratamento bruto dos dados, Power BI para apresentação dos dados e Python para navegação inteligente pela base de dados (Text to SQL). Foi realizado um cálculo de tempo de Payback como driver de decisão para filtrar os 5 melhores bairros e o Bairro escolhido foi o Funcionários, com um payback mediano de 8,56 anos.
 
 # 🏢 Análise de Atratividade Imobiliária & Inteligência de Mercado — Belo Horizonte (PBH & Kaggle)
 
@@ -12,19 +12,34 @@ Projeto criado para avaliar a construção de complexos imobiliários na cidade 
 
 ## 📌 Visão Geral do Projeto
 
-Este projeto tem como objetivo avaliar a **atratividade e viabilidade de investimentos imobiliários na cidade de Belo Horizonte/MG**, integrando dados públicos da Prefeitura de Belo Horizonte (PBH) com dados consolidados do mercado imobiliário (Kaggle). Foram definidas algumas regras para a escolha de bairro adequado, a qual identifiquei o Funcionários como escolha ideal pelos motivos abaixo:
-* **Tempo de payback**: Bairro dentre os 5 com menores valores, mostrando baixo tempo de retorno no investimento.
-* **Localização Estratégica:** Região Centro-Sul, garante baixíssima vacância locatícia e rápida conexão com polos de serviços, saúde e educação.
-* **Aporte necessário:** Exige um ticket médio de R$ 10.000/m², cerca 1,65x maior que a mediana da cidade 
-* **Densidade populacional (demanda):** 249,68 habitantes a cada 10.000, mostrando ter demanda.
+Este projeto tem como objetivo avaliar **atratividade e viabilidade de investimentos imobiliários na cidade de Belo Horizonte/MG**, definindo um Bairro com relação custo/retorno equilibrado. Para tal, integrei dados públicos da Prefeitura de Belo Horizonte (PBH) com dados consolidados do mercado imobiliário (Kaggle).
 
-A solução combina um **pipeline rigoroso de limpeza e harmonização em SQL**, um **dashboard executivo moderno no Power BI** (com suporte a matrizes de risco/retorno e análise de payback) e um **módulo interativo em Python utilizando Text-to-SQL**, que permite realizar consultas em linguagem natural no banco de dados imobiliário.
+A solução combina um **pipeline rigoroso de limpeza e harmonização em SQL**, um **dashboard executivo moderno no Power BI** (com suporte a matrizes de risco/retorno e análise de payback) e um **módulo interativo em Python utilizando Text-to-SQL**, que permite realizar consultas em linguagem natural no banco de dados imobiliário. 
 
 ---
 
-## 🎯 Problema de Negócio & Objetivos
+## 🎯 Objetivos & Problemas de Negócio
 
-Mediante a densidade de imóveis e gama de opções de locais aos quais podem ser atribuídos a escolha de se construir um complexos imobiliário na cidade de Belo Horizonte, criei uma ferramenta para ter acesso a base de dados públicos da prefeitura de Belo Horizonte para se entender o apelo que se tem de cada perfil de imóvel, desde custo, tamanho, localidade e ligando isso a demanda que cada aspecto tem pelo público. Meu objetivo foi selecionar um bairro depois de filtrar a base com um range de R$ 1.0000 - 50.000 de custo mediano de M2, um tamanho de imóveis entre 20 - 360 m2.  
+Meu objetivo foi selecionar um bairro. Para seleção ideal, precisei adaptar a amostra para se encaixar no intervalor de maior apelo comercial:
+* **Range ideal de custo mediano do m2**: Optei por um intervalo entre R$ 1.000 a 50.0000, pensando em imóveis de alto padrão e eliminando aluguéis, outliers extremos. 
+* **Range de área(m2):** Limitei as consultas em SQL entre 20 a 360 m2, criando uma view. Este range foi definido ao segregar a base em intervalos de valores e pegando os espectros que concentram maiores ofertas.
+* **Amostra mínima:** Considerei apenas bairros com ao menos 20 anúncios e 10 endereços distintos.
+* **Definir critério para cálculo de Payback:** Consultando o Sinduscon-MG, optei por usar um CUB de R$ 3.137,48 para residências de alto nível. Valor atualizado em Setembro de 2026.
+
+## 💎 Resultados do tratamento
+
+Aplicando os critérios, a base passou por uma redução no volume de anúncios:
+
+* **Volume Bruto Inicial:** 5.509 anúncios coletados originalmente.
+* **Remoção de Duplicadas:** Queda para **5.262 anúncios** únicos.
+* **Filtrando quanto a custo do m2 e area:** 
+   * **Resultado:** **4.712 imóveis válidos** no total da base *(métrica apresentada nos indicadores globais do dashboard)*.
+
+### 🛠️ Critério de Elegibilidade para o Ranking de Oportunidades
+Para que um bairro seja considerado na análise comparativa de *payback* e oportunidades, ele precisa cumprir as seguintes condições:
+
+* **Regra de Amostragem Mínima:** Apenas bairros com no mínimo 20 anúncios distribuídos em pelo menos 10 endereços distintos.
+* **Volume qualificado para o Ranking:** 3.967 anúncios distribuídos em 44 bairros.
 
 ---
 
@@ -53,21 +68,31 @@ O modelo de dados adota a arquitetura de **Star Schema** (Esquema Estrela), gara
 
 Para garantir performance, escalabilidade e manutenibilidade do projeto, o modelo de dados passou por um processo completo de **refatoração arquitetural**, evoluindo de esquemas legados com ambiguidades para um **Star Schema (Esquema em Estrela)** otimizado.
 
+---
+
 ### 🎯 Principais Desafios
 
-1. **Migração para Star Schema ($1 : N$):**
+1. **Centralização de Regras de Negócio e Otimização DAX:**
+   * ** Critério para escolha de localização ideal.
+      * Estipular limites de custo mediano de m2 para análise.
+      * Definir range de area_m2 para avaliação (optei por 20-360 m2)
+      * Entender o apelo de localização estratégica dos bairros filtrados por Payback para entender a escolha ideal.
+      * Balancear Oferta de imóveis por 10.000 habitantes com o custo mediano de m2.
+   * Criação do repositório dedicado `_Medidas` para isolar toda a camada de cálculo.
+   * **Faxina & Refatoração:** Remoção de código morto, unificação de medidas redundantes de m² e uso de funções seguras (`DIVIDE` com tratamento de divisão por zero) para otimização do consumo de memória. Além decimais lidos 100× maiores no Power BI, tive que substituir ponto por vírgula antes de converter para decimal (Ex: 439000.00 apareceu como 43.900.000). 
+
+2. **Padronização e Tratamento em Pipeline (Power Query / SQL):**
+   * Padronização de nomes de bairros utilizando *Capitalize Each Word* para alinhamento entre as bases do IBGE/PBH e dados extraídos via Web Scraping/Kaggle.
+
+3. **Migração para Star Schema ($1 : N$):**
    * **Desafio:** Existência de tabelas relacionais intermediárias e granularidades inconsistentes que geravam ambiguidades nos relacionamentos e duplicidades de registros.
    * **Solução:** Consolidação das informação na tabela dimensão mestre `dBairro` (Lado $1$) conectada diretamente à tabela de anúncios `fato_Kaggle` (Lado $N$).
 
-2. **Garantia de Granularidade e Deduplicação:**
+4. **Garantia de Granularidade e Deduplicação:**
    * **Ajuste Fino:** Remoção de atributos de oferta (`tipo_imovel` e `tipo_negocio`) da dimensão geográfica para garantir a estrita relação $1:N$ sem quebra de cardinalidade por bairros duplicados.
 
-3. **Padronização e Tratamento em Pipeline (Power Query / SQL):**
-   * Padronização de nomes de bairros utilizando *Capitalize Each Word* para alinhamento entre as bases do IBGE/PBH e dados extraídos via Web Scraping/Kaggle.
+### 🎯 Conclusões alcançadas
 
-4. **Centralização de Regras de Negócio e Otimização DAX:**
-   * Criação do repositório dedicado `_Medidas` para isolar toda a camada de cálculo.
-   * **Faxina & Refatoração:** Remoção de código morto, unificação de medidas redundantes de m² e uso de funções seguras (`DIVIDE` com tratamento de divisão por zero) para otimização do consumo de memória.
 
 ---
 
