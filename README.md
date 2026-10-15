@@ -28,7 +28,7 @@ Meu objetivo foi selecionar um bairro. Para seleção ideal, precisei adaptar a 
 
 ## 🛠️ Tratamento da Base
 
-Aplicando os critérios, a base passou por uma redução no volume de anúncios:
+Aplicando as adaptações comerciais, a base passou por uma redução no volume de anúncios:
 
 * **Volume Bruto Inicial:** 5.509 anúncios coletados originalmente.
 * **Remoção de Duplicadas:** Queda para **5.262 anúncios** (-247) únicos.
@@ -36,15 +36,15 @@ Aplicando os critérios, a base passou por uma redução no volume de anúncios:
    * **Resultado:** **4.712 imóveis válidos** (-550) no total da base *(métrica apresentada nos indicadores globais do dashboard)*.
 
 ### 🛠️ Critério de Elegibilidade para o Ranking de Oportunidades
-Para que um bairro seja considerado na análise comparativa de *payback* e oportunidades, ele precisa cumprir as seguintes condições:
+Para que um bairro seja considerado elegível na análise comparativa de *payback* e oportunidades, ele precisa cumprir as seguintes condições:
 * **Regra de Amostragem Mínima:** Apenas bairros com no mínimo 20 anúncios distribuídos em pelo menos 10 endereços distintos.
-* **Volume qualificado para o Ranking:** 3.967 anúncios distribuídos em 44 bairros.
+* **Volume qualificado para o Ranking:** 3.967 anúncios (-1.542) distribuídos em 44 bairros.
 
 ---
 
 ## 💎 Justificando Resultado
 
-Escolhi o bairro Belvedere como ideal. Após passarem pela bateria de regras de negócio, 5 bairros se destacam com os menores tempos de Payback. Os ordenando de forma crescente:
+Escolhi o bairro Belvedere como ideal. Após passarem pelas regras de negócio, 5 bairros se destacam com os menores tempos de Payback:
 
 1. Santo Agostinho: 7,49 anos para retorno de capital investido
 2. Savassi: 7,57 anos para retorno de capital investido
@@ -52,7 +52,7 @@ Escolhi o bairro Belvedere como ideal. Após passarem pela bateria de regras de 
 4. **Belvedere:** 8,42 anos para retorno de capital investido
 5. Funcionários:8,56 anos para retorno de capital investido
 
-Aqui surge a pergunta: "Por que Belvedere se ele tem o maior tempo de Payback neste TOP 5?". Quando avaliei o comportamento dos 5 bairros perante as métricas definidas, algo fica destacado: 
+Aqui surge a pergunta: "Por que Belvedere e não Santo Agostinho se o driver de decisão foi o tempo de Payback?". Quando avaliei o comportamento dos 5 bairros perante as métricas definidas, algo fica destacado: 
 
 | Bairro          | Payback Mediano | Preço mediano m2 | Oferta per 10k Habitantes |
  ----------------------------------------------------------------------------------
@@ -62,7 +62,18 @@ Aqui surge a pergunta: "Por que Belvedere se ele tem o maior tempo de Payback ne
 | Belvedere       |      8,42       |  R$ 10.273.97    |           111,18          |
 | Funcionários    |      8,56       |  R$ 10.000,00    |           249,68          |
 
-Belvedere tem quase um empate técnico com o Funcionários, mas ele apresenta menor tempo de Payback e Oferta per 10k Habitantes cerca de 2,25x menor. Isso é interessante pois mostra que um imóvel novo construído no Belvedere compete com muito menos imóveis que no Funcionários.
+Aqui 3 bairros se destacam, Santo Agostinho pelo menor payback, Belvedere e Funcionários pelos menores preços de m2. 
+
+| Bairro          | Payback Mediano     | Preço mediano m2  | Oferta per 10k Habitantes |
+ ---------------------------------------------------------------------------------------
+| Santo Agostinho |      **7.49**       |  R$ 12.592,59     |           160,27          |
+| Belvedere       |      8,42           |  R$ 10.273.97     |           **111,18**      |
+| Funcionários    |      8,56           |  **R$ 10.000,00** |           249,68          |
+
+
+Porém, Santo Agostinho tem um custo de m2 18% maior que Belvedere e 21% menor que Funcionário, desclassificando-o. Belvedere e Funcionários tem um empate técnico em termos de preço do m2, mas ele apresenta menor tempo de Payback e Oferta per 10k Habitantes cerca de 2,25x menor. Isso é interessante pois mostra que um imóvel novo construído no Belvedere compete com muito menos imóveis que no Funcionários.
+
+Portanto, recomendo o investimento no bairro Belvedere.
 
 ---
 
